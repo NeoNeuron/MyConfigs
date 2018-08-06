@@ -1,5 +1,5 @@
-# MyConfigs
-Online backups for my personal configuration files.
+# dotfiles
+Collection of dotfiles for my personal use
 
 ## Contents
 1. .zshrc --> configure file of zsh and oh-my-zsh
