@@ -31,6 +31,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Lokaltog/vim-powerline'
 " Plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'minibufexpl.vim'
 "Plugin 'taglist.vim'
