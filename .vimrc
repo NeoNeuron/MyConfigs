@@ -94,3 +94,12 @@ let g:NERDTreeIndicatorMapCustom = {
 " minibufexpl.vim
 let g:miniBufExplMaxSize=2
 
+" vim-powerline setups
+let g:Powerline_symbols = 'fancy'
+let g:Powerline_colorscheme = 'solarized256'
+set t_Co=256
+set nocompatible
+set laststatus=2 
+set guifont=Source\ Code\ Pro\ for\ Powerline:h12 
+set noshowmode
+"let g:minBufExplForceSyntaxEnable = 1
