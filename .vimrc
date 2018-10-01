@@ -33,6 +33,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Lokaltog/vim-powerline'
+Plugin 'airblade/vim-gitgutter'
 " Plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'minibufexpl.vim'
 "Plugin 'taglist.vim'
@@ -69,6 +70,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 syntax on
+set hlsearch
 
 " NERDTree
 map <C-n> :NERDTree<CR>

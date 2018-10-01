@@ -13,7 +13,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Prompt elements
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv os_icon context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time battery)
 
 # Prompt settings
@@ -43,6 +43,9 @@ POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='blue'
 # Time
 # POWERLEVEL9K_TIME_FORMA="%D{\uF017 %T}" #  15:29:33
 POWERLEVEL9K_TIME_BACKGROUND='green'
+
+# Python
+POWERLEVEL9K_PYTHON_ICON='\U1F40D'
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -140,8 +143,12 @@ function scp-down() {
 } 
 
 # Set python virtual environment
-#export WORKON_HOME=~/Envs/
-#source /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=~/Envs/
+if [ -e $HOME/.local/bin/virtualenvwrapper.sh ]; then 
+	source $HOME/.local/bin/virtualenvwrapper.sh 
+elif [ -e /usr/local/bin/virtualenvwrapper.sh ]; then 
+	source /usr/local/bin/virtualenvwrapper.sh 
+fi
 
 # set localhost display for command only systems
 # export DISPLAY=localhost:0.0
