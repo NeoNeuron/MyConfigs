@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+#enables color for iTerm
+export TERM=xterm-256color
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -13,8 +16,9 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Prompt elements
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv os_icon context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time battery)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs load ram_joined time battery)
 
 # Prompt settings
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -31,8 +35,8 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 
 # OS segment
-POWERLEVEL9K_OS_ICON_BACKGROUND='blue'
-POWERLEVEL9K_LINUX_ICON='%F{cyan}\uE73A%f'
+POWERLEVEL9K_OS_ICON_BACKGROUND='black'
+#POWERLEVEL9K_LINUX_ICON='%F{cyan}\uE73A%f'
 
 # Battery
 POWERLEVEL9K_BATTERY_LOW_FOREGROUND='red'
@@ -45,7 +49,7 @@ POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='blue'
 POWERLEVEL9K_TIME_BACKGROUND='green'
 
 # Python
-POWERLEVEL9K_PYTHON_ICON='\U1F40D'
+POWERLEVEL9K_PYTHON_ICON='\uE606'
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -157,7 +161,7 @@ fi
 #[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
 # set autojump if installed with apt-get install
-. /usr/share/autojump/autojump.sh
+#. /usr/share/autojump/autojump.sh
 
 # set term color on mintty
 #source ~/mintty-colors-solarized/sol.dark
@@ -174,3 +178,5 @@ fi
 #	exec tmux
 #}
 export PATH=~/install/linux-`uname -r | sed 's/-.*//'`/tools/perf:$PATH
+export PATH="/Applications/NEURON-7.6/nrn/x86_64/bin":$PATH #added by NEURON installer
+export PYTHONPATH="/Applications/NEURON-7.6/nrn/lib/python":$PYTHONPATH #added by NEURON installer

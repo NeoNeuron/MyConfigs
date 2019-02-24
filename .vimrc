@@ -32,11 +32,11 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'Yggdroot/indentLine'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ryanoasis/vim-devicons'
 " Plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'minibufexpl.vim'
-"Plugin 'taglist.vim'
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -71,6 +71,8 @@ set softtabstop=2
 set shiftwidth=2
 syntax on
 set hlsearch
+set backspace=2
+set cul
 
 " NERDTree
 map <C-n> :NERDTree<CR>
@@ -89,21 +91,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-"" Taglist.vim
-"let Tlist_Show_One_File=1    " Only show the taglist in one file
-"let Tlist_Exit_OnlyWindow=1  " Exit when taglist is the only window
-"let Tlist_Use_Right_Window=1 " Show the taglist on the right
-"let Tlist_Sort_Type="name"   " Sort tags by name
-
-" minibufexpl.vim
-let g:miniBufExplMaxSize=2
-
-" vim-powerline setups
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_colorscheme = 'solarized256'
-set t_Co=256
-set nocompatible
+" vim-airline settings:
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+noremap <tab> :bn<cr> "set tab mapping"
+noremap <S-tab> :bN<cr> "set tab mapping"
+let g:airline_theme='powerlineish'
 set laststatus=2 
-set guifont=Source\ Code\ Pro\ for\ Powerline:h12 
-set noshowmode
-"let g:minBufExplForceSyntaxEnable = 1
+set t_Co=256
+set encoding=utf-8
