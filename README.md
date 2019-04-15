@@ -273,18 +273,14 @@ $ sudo vim
 Install development tools and CMake:
 
 ```shell
-$ sudo apt-get install build-essential cmake
+$ brew install CMake
 ```
-Make sure you have Python headers installed:
+
+Compiling YCM with semantic support for C-family languages:
 
 ```shell
-$ sudo apt-get install python-dev python3-dev
-```
-Compiling YCM without semantic support for C-family languages:
-
-```shell
-$ cd ~/.vim/bundle/YouCompleteMe
-$ sudo ./install.py
+cd ~/.vim/bundle/YouCompleteMe 
+sudo ./install.sh --clang-completer
 ```
 ### .tmux.conf
 Install tmux

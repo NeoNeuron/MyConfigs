@@ -36,6 +36,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 " Plugin from http://vim-scripts.org/vim/scripts.html
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -62,10 +65,17 @@ filetype plugin indent on    " required
 " cd ~/.vim/bundle/YouCompleteMe/ && ./install.sh --clang-completer
 " cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
 "		~/
-let g:ycm_global_ycm_extra_conf='~/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
 " Regular Settings
 set nu
+" Set relative line numbers
+augroup relative_numbser
+ autocmd!
+ autocmd InsertEnter * :set norelativenumber
+ autocmd InsertLeave * :set relativenumber
+augroup END
+
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -90,6 +100,8 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒ ',
     \ "Unknown"   : "?"
     \ }
+" indentLine:
+let g:tex_conceal=''
 
 " vim-airline settings:
 let g:airline_powerline_fonts = 1
@@ -100,3 +112,20 @@ let g:airline_theme='powerlineish'
 set laststatus=2 
 set t_Co=256
 set encoding=utf-8
+
+" vim-latex-live-preview:
+autocmd Filetype tex setl updatetime=1000
+let g:livepreview_previewer='open -a Skim'
+
+let g:livepreview_engine='xelatex'
+
+" YouCompleteMe setting
+let g:ycm_key_list_select_completion = ["<C-j>", "<Down>", "<tab>"]
+let g:ycm_key_list_previous_completion = ["<C-k>", "<Up>", "<s-tab>"]
+
+" ultisnips setting
+let g:UltiSnipsExpandTrigger = "<C-l>"
+let g:UltiSnipsJumpForwardTrigger = "<C-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+
+let g:UltiSnipsEditSplit='vertical'
